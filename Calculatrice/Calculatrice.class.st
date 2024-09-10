@@ -8,6 +8,16 @@ Class {
 	#package : 'Calculatrice'
 }
 
+{ #category : 'as yet unclassified' }
+Calculatrice >> averageOfNumbers [
+
+	| size average sum |
+	size := self numbers size.
+	sum := self sumOfTheNumbers.
+	average := sum / size asFloat.
+	^ average
+]
+
 { #category : 'initialization' }
 Calculatrice >> initialize [
 
