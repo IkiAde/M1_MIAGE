@@ -12,6 +12,17 @@ Class {
 	#package : 'Vehicles'
 }
 
+{ #category : 'nil' }
+Vehicle >> available [ 
+state available
+]
+
+{ #category : 'as yet unclassified' }
+Vehicle >> checkMaximumRental [
+"Checks if the vehicle has reached the maximum number of rentals."
+^ (self nbRentals < self maxNbRentals) 
+]
+
 { #category : 'accessing' }
 Vehicle >> description [
 
@@ -35,13 +46,19 @@ Vehicle >> id: anId [
 	id := anId
 ]
 
+{ #category : 'as yet unclassified' }
+Vehicle >> incrementNbRentals [
+nbRentals:=  nbRentals+1
+]
+
 { #category : 'accessing' }
 Vehicle >> initialize [
 
 	super initialize.
-id:= (Random new nextInteger: 20).
+	id := Random new nextInteger: 20.
 	nbRentals := 0.
-	maxNbRentals := 10
+	maxNbRentals := 10.
+	state:= AvailableState new initializeWithVehicle: self.
 ]
 
 { #category : 'accessing' }
@@ -66,6 +83,18 @@ Vehicle >> nbRentals [
 Vehicle >> nbRentals: aNumber [
 
 	 nbRentals:= aNumber
+]
+
+{ #category : 'nil' }
+Vehicle >> outOfService [ 
+
+	state outOfService 
+]
+
+{ #category : 'nil' }
+Vehicle >> rented [ 
+
+	state rented
 ]
 
 { #category : 'accessing' }
