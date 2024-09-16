@@ -4,11 +4,25 @@ Class {
 	#instVars : [
 		'id',
 		'nbRentals',
-		'maxNbRentals'
+		'maxNbRentals',
+		'description',
+		'state'
 	],
 	#category : 'Vehicles',
 	#package : 'Vehicles'
 }
+
+{ #category : 'accessing' }
+Vehicle >> description [
+
+	^ description
+]
+
+{ #category : 'accessing' }
+Vehicle >> description: aDescription [
+
+	description := aDescription
+]
 
 { #category : 'accessing' }
 Vehicle >> id [ 
@@ -52,4 +66,22 @@ Vehicle >> nbRentals [
 Vehicle >> nbRentals: aNumber [
 
 	 nbRentals:= aNumber
+]
+
+{ #category : 'accessing' }
+Vehicle >> state [
+
+	^ state
+]
+
+{ #category : 'accessing' }
+Vehicle >> state: aState [
+
+	state := aState
+]
+
+{ #category : 'as yet unclassified' }
+Vehicle >> vehicleDescription [
+
+	^ 'This a ', self description.
 ]
