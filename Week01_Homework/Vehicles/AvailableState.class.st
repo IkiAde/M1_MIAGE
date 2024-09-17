@@ -16,7 +16,8 @@ AvailableState >> available [
 AvailableState >> outOfService [
 	"Transition to the out of service state"
 
-	vehicle setState: (OutOfServiceState new initializeWithVehicle: vehicle)
+	vehicle state:
+		(OutOfServiceState new initializeWithVehicle: vehicle)
 ]
 
 { #category : 'nil' }
