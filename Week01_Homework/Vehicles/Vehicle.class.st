@@ -19,8 +19,9 @@ state available
 
 { #category : 'as yet unclassified' }
 Vehicle >> checkMaximumRental [
-"Checks if the vehicle has reached the maximum number of rentals."
-^ (self nbRentals < self maxNbRentals) 
+	"Checks if the vehicle has reached the maximum number of rentals."
+
+	^ self nbRentals <= self maxNbRentals
 ]
 
 { #category : 'accessing' }
@@ -112,5 +113,5 @@ Vehicle >> state: aState [
 { #category : 'as yet unclassified' }
 Vehicle >> vehicleDescription [
 
-	^ 'This a ', self description.
+	^ 'This is a ' , self description
 ]
