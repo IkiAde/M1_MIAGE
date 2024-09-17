@@ -1,5 +1,5 @@
 Class {
-	#name : 'AvailableStateTests',
+	#name : 'AvailableStateTest',
 	#superclass : 'TestCase',
 	#instVars : [
 		'ferrari'
@@ -9,7 +9,7 @@ Class {
 }
 
 { #category : 'running' }
-AvailableStateTests >> setUp [
+AvailableStateTest >> setUp [
 
 	super setUp.
 	ferrari := Car new
@@ -17,14 +17,14 @@ AvailableStateTests >> setUp [
 ]
 
 { #category : 'tests' }
-AvailableStateTests >> testTransitionToAvailableState [
+AvailableStateTest >> testTransitionToAvailableState [
 
 
 	self should: [ ferrari available ] raise: Error
 ]
 
 { #category : 'tests' }
-AvailableStateTests >> testTransitionToOutServiceState [
+AvailableStateTest >> testTransitionToOutServiceState [
 
 	ferrari outOfService.
 
@@ -32,7 +32,7 @@ AvailableStateTests >> testTransitionToOutServiceState [
 ]
 
 { #category : 'tests' }
-AvailableStateTests >> testTransitionToRentedState [
+AvailableStateTest >> testTransitionToRentedState [
 
 
 	ferrari rented.

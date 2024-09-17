@@ -1,5 +1,5 @@
 Class {
-	#name : 'RentedStateTests',
+	#name : 'RentedStateTest',
 	#superclass : 'TestCase',
 	#instVars : [
 		'moto'
@@ -9,27 +9,27 @@ Class {
 }
 
 { #category : 'running' }
-RentedStateTests >> setUp [
+RentedStateTest >> setUp [
 	super setUp.
 	moto:= Bike new.
 	moto state: (RentedState new initializeWithVehicle: moto)
 ]
 
 { #category : 'tests' }
-RentedStateTests >> testTransitionToAvailableState [ 
+RentedStateTest >> testTransitionToAvailableState [ 
 
 moto available.
 	self assert:(moto state isKindOf: AvailableState )
 ]
 
 { #category : 'tests' }
-RentedStateTests >> testTransitionToOutOfServiceState [
+RentedStateTest >> testTransitionToOutOfServiceState [
 
 	self should: [ moto outOfService ] raise: Error
 ]
 
 { #category : 'tests' }
-RentedStateTests >> testTransitionToRentedState [
+RentedStateTest >> testTransitionToRentedState [
 
 	self should: [ moto rented ] raise: Error
 ]

@@ -1,5 +1,5 @@
 Class {
-	#name : 'OutOfServiceStateTests',
+	#name : 'OutOfServiceStateTest',
 	#superclass : 'TestCase',
 	#instVars : [
 		'tesla'
@@ -9,7 +9,7 @@ Class {
 }
 
 { #category : 'running' }
-OutOfServiceStateTests >> setUp [
+OutOfServiceStateTest >> setUp [
 
 	super setUp.
 	tesla := Car new.
@@ -17,20 +17,20 @@ OutOfServiceStateTests >> setUp [
 ]
 
 { #category : 'tests' }
-OutOfServiceStateTests >> testTransitionToAvailableState [
+OutOfServiceStateTest >> testTransitionToAvailableState [
 
 	self should: [ tesla available ] raise: Error
 
 ]
 
 { #category : 'tests' }
-OutOfServiceStateTests >> testTransitionToOutOfServiceState [ 
+OutOfServiceStateTest >> testTransitionToOutOfServiceState [ 
 
 	self should: [ tesla outOfService ] raise: Error
 ]
 
 { #category : 'tests' }
-OutOfServiceStateTests >> testTransitionToRentedState [ 
+OutOfServiceStateTest >> testTransitionToRentedState [ 
 
 	self should: [ tesla rented ] raise: Error
 ]
