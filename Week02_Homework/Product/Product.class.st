@@ -32,6 +32,19 @@ Product >> brand: aBrand [
 	brand := aBrand
 ]
 
+{ #category : 'as yet unclassified' }
+Product >> changePrice: aPrice [
+
+price:= aPrice
+]
+
+{ #category : 'as yet unclassified' }
+Product >> displayProduct [
+
+	^ 'Product: ' , self name , ' ,' , 'price: ' , self price asString, ' ,'
+	  , 'brand: ' , self brand
+]
+
 { #category : 'accessing' }
 Product >> name [
 
