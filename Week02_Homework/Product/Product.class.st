@@ -11,11 +11,12 @@ Class {
 }
 
 { #category : 'instance creation' }
-Product class >> newProductNamed: aName Price: aPrice [
+Product class >> newProductNamed: aName Price: aPrice Brand: aBrand [
 
 	^ self new
 		  name: aName;
 		  price: aPrice;
+		brand: aBrand;
 		  yourself
 ]
 
