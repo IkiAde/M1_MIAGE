@@ -11,6 +11,14 @@ Class {
 }
 
 { #category : 'instance creation' }
+Product class >> moreExpensiveBetween: product1 And: product2 [
+
+	product1 price > product2 price
+		ifTrue: [ ^product1 name ]
+		ifFalse: [ ^product2 name ]
+]
+
+{ #category : 'instance creation' }
 Product class >> newProductNamed: aName Price: aPrice Brand: aBrand [
 
 	^ self new
